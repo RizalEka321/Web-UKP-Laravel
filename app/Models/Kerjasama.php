@@ -11,6 +11,7 @@ class Kerjasama extends Model
     use HasFactory, SoftDeletes;
     protected $primaryKey = 'id_kerjasama';
     protected $guarded = ['id_kerjasama'];
+
     public function prodi()
     {
         return $this->belongsToMany(Prodi::class, 'kerjasama_prodis', 'id_kerjasama', 'id_prodi');

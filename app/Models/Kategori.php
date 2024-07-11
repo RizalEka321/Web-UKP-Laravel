@@ -14,4 +14,8 @@ class Kategori extends Model
     {
         return $this->hasOne(Kerjasama::class, 'id_kategori');
     }
+    public function post()
+    {
+        return $this->hasOne(Post::class, 'id_kategori');
+    }
 }

@@ -8,7 +8,7 @@
                     <div class="card card-statistic-1">
                         <div>
                             <button class="card-icon bg-primary"><i class="fas fa-globe-asia"></i></button>
-                            
+
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
@@ -101,15 +101,15 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-12 col-sm-12">
-                    @include('admin.kerjasama.chart')
+                    @include('admin.chart.chart')
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12 col-sm-12">
-                    @include('admin.kerjasama.chart-prodi')
+                    @include('admin.chart.chart-prodi')
                 </div>
                 <div class="col-lg-6 col-md-6 col-12 col-sm-12">
-                    @include('admin.kerjasama.chart-kategori')
+                    @include('admin.chart.chart-kategori')
                 </div>
             </div>
         </section>

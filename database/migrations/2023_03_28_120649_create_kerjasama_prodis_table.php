@@ -14,8 +14,8 @@ class CreateKerjasamaProdisTable extends Migration
     public function up()
     {
         Schema::create('kerjasama_prodis', function (Blueprint $table) {
-            $table->foreignId('id_kerjasama')->references('id_kerjasama')->on('kerjasamas');
-            $table->foreignId('id_prodi')->references('id_prodi')->on('prodis');
+            $table->foreignId('id_kerjasama')->references('id_kerjasama')->on('kerjasamas')->onDelete('cascade');
+            $table->foreignId('id_prodi')->references('id_prodi')->on('prodis')->onDelete('cascade');
         });
     }
 

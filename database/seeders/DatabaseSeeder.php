@@ -16,11 +16,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\User::factory()->create([
-         'email' => 'admin@admin.com',
-         'password' => Hash::make('admin'),
-         'role' => 'admin',
-         'no_hp' => '08245621346154' ]);
+        \App\Models\User::factory()->create([
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('admin'),
+            'role' => 'admin',
+            'no_hp' => '08245621346154'
+        ]);
+        \App\Models\User::factory()->create([
+            'email' => 'prodi@prodi.com',
+            'password' => Hash::make('prodi'),
+            'role' => 'prodi',
+            'no_hp' => '08245621346155'
+        ]);
+        \App\Models\User::factory()->create([
+            'email' => 'mitra@mitra.com',
+            'password' => Hash::make('mitra'),
+            'role' => 'mitra',
+            'no_hp' => '08245621346166'
+        ]);
         $this->call(KategoriSeeder::class);
         $this->call(ProdiSeeder::class);
         Kerjasama::factory()->count(100)->create();

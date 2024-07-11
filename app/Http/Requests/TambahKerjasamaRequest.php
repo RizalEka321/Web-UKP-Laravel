@@ -24,19 +24,20 @@ class TambahKerjasamaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama_instansi'     => 'required',
-            'nomor_perusahaan'  => 'required',
-            'contact_person'    => 'required',
-            'jenis_kegiatan'    => 'required',
-            'manfaat'           => 'required',
-            'tgl_mulai'         => 'required|date|before:tgl_berakhir',
-            'tgl_berakhir'      => 'required|date',
-            'prodi'             => 'required',
-            'kategori'          => 'required',
-            'hard_file'         => 'required',
-            'implementasi'      => 'required',
-            'mou'               =>  'required|mimes:docx,pdf',
-            'nomor_mou'         =>  'required'
+            'nomor_mou' => 'nullable',
+            'kriteria' => 'required',
+            'email_instansi' => 'required',
+            'alamat_instansi' => 'required',
+            'nama_instansi' => 'required',
+            'nama_contact_person' => 'required',
+            'contact_person' => 'required',
+            'jenis_kegiatan' => 'required',
+            'prodi' => 'required',
+            'kategori' => 'required',
+            'mou' =>  'required|mimes:docx,pdf',
+            'hard_file' => 'required',
+            'tgl_mulai' => 'required|date|before:tgl_berakhir',
+            'tgl_berakhir' => 'required|date',
         ];
     }
 }

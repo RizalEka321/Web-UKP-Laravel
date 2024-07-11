@@ -15,20 +15,21 @@ class CreateKerjasamasTable extends Migration
     {
         Schema::create('kerjasamas', function (Blueprint $table) {
             $table->id('id_kerjasama');
-            $table->foreignId('id_user')->references('id')->on('users');
-            $table->foreignId('id_kategori')->references('id_kategori')->on('kategoris');
+            $table->foreignId('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('id_kategori')->references('id_kategori')->on('kategoris')->onDelete('cascade');
+            $table->string('nomor_mou')->nullable();
+            $table->string('kriteria');
+            $table->string('email_instansi');
+            $table->string('alamat_instansi');
             $table->string('nama_instansi');
-            $table->string('nomor_perusahaan');
+            $table->string('nama_contact_person');
             $table->string('contact_person');
-            $table->string('nomor_mou');
-            $table->string('file_mou');
             $table->string('jenis_kegiatan');
-            $table->string('manfaat');
-            $table->string('implementasi');
+            $table->string('file_mou');
+            $table->tinyInteger('hard_file')->default(0);
             $table->date('tgl_mulai');
             $table->date('tgl_berakhir');
             $table->tinyInteger('status')->default(0);
-            $table->tinyInteger('hard_file')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

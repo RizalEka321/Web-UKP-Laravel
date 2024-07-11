@@ -24,7 +24,7 @@ class KategoriSeeder extends Seeder
             ], [
                 'nama_kategori' =>  'Perguruan Tinggi'
             ], [
-                'nama_kategori' =>  'Industri, Masyarakat dan PKL'
+                'nama_kategori' =>  'Industri'
             ]
         ];
         Kategori::insert($data);

@@ -11,25 +11,13 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        // $user   = auth()->user();
-        // $last_login = Carbon::now()->diffInSeconds(Carbon::parse($user->last_login));
         $total_luar_negeri = Kerjasama::whereHas('kategori', function ($query) {
             $query->where('nama_kategori', 'luar negeri');
         })->count();
@@ -59,6 +47,7 @@ class HomeController extends Controller
             // 'last_login' => $last_login
         ]);
     }
+
     public function dataChart(Request $request)
     {
         $kerjasama = Kerjasama::selectRaw('COUNT(id_kerjasama) as total,YEAR(created_at) as tahun');
@@ -76,6 +65,7 @@ class HomeController extends Controller
         }
         return response()->json($data, 200);
     }
+
     public function dataChartProdi(Request $request)
     {
         $prodi = Prodi::withCount(['kerjasama' => function ($query) use ($request) {
@@ -93,6 +83,7 @@ class HomeController extends Controller
         }
         return response()->json($data, 200);
     }
+
     public function dataChartKategori(Request $request)
     {
         $prodi = Kategori::withCount(['kerjasama' => function ($query) use ($request) {
